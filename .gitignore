@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
+web/node_modules/
+web/dist/
+web/screenshots/
+demo/cache/
+/data/
+archive.zip

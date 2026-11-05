@@ -1,0 +1,309 @@
+{
+ "ols": {
+  "mle_diff": 1.3499247292908523e-12,
+  "iters": 1144,
+  "beta_closed": 2239.3453779840747,
+  "cond": 56.07351902908597
+ },
+ "blr": {
+  "b": {
+   "alpha": 7797370.266899677,
+   "beta": 2229.337538481369,
+   "gamma": 9.534006938336777,
+   "iters": 31
+  },
+  "a": {
+   "alpha": 0.00012014109947939811,
+   "beta": 0.015947350184747678,
+   "gamma": 5.989849007823763,
+   "iters": 7
+  },
+  "cover_b": 0.9562043795620438,
+  "cover_a": 0.5158150851581509
+ },
+ "huber": {
+  "huber_a": {
+   "epsilon": 2.5,
+   "outliers": 225
+  },
+  "huber_b_eng": {
+   "epsilon": 1.35,
+   "outliers": 1629
+  }
+ },
+ "ridge": {
+  "ridge_a": {
+   "best": 1e-05,
+   "at_edge": false,
+   "plateau": true
+  },
+  "ridge_b_raw": {
+   "best": 3162.2776601683795,
+   "at_edge": false,
+   "plateau": false
+  },
+  "ridge_b_eng": {
+   "best": 10000.0,
+   "at_edge": false,
+   "plateau": false
+  }
+ },
+ "reg": [
+  {
+   "key": "persistence",
+   "model": "Persistence",
+   "target": "baseline",
+   "features": "none",
+   "rmse": 30.305075689237526,
+   "mae": 20.815510948905146,
+   "mape": 1.4692862829703621,
+   "dm_t": null,
+   "dm_p": null
+  },
+  {
+   "key": "ols_a",
+   "model": "OLS",
+   "target": "A",
+   "features": "RAW",
+   "rmse": 30.334904009594954,
+   "mae": 20.862205645583426,
+   "mape": 1.47267642137966,
+   "dm_t": 0.2515600937991744,
+   "dm_p": 0.8013811073072783
+  },
+  {
+   "key": "ols_b_raw",
+   "model": "OLS",
+   "target": "B",
+   "features": "RAW-returns",
+   "rmse": 30.361874404963046,
+   "mae": 20.86199246363909,
+   "mape": 1.4743086643448782,
+   "dm_t": 0.4293283838750883,
+   "dm_p": 0.6676842635443399
+  },
+  {
+   "key": "ols_b_eng",
+   "model": "OLS",
+   "target": "B",
+   "features": "ENGINEERED",
+   "rmse": 30.343732447658038,
+   "mae": 20.841770675420815,
+   "mape": 1.4741544126323156,
+   "dm_t": 0.2820348159655573,
+   "dm_p": 0.7779168141928219
+  },
+  {
+   "key": "huber_a",
+   "model": "Huber",
+   "target": "A",
+   "features": "RAW",
+   "rmse": 30.314677452781144,
+   "mae": 20.851174777277837,
+   "mape": 1.47221639907463,
+   "dm_t": 0.08570156998298556,
+   "dm_p": 0.9317036540564692
+  },
+  {
+   "key": "huber_b_eng",
+   "model": "Huber",
+   "target": "B",
+   "features": "ENGINEERED",
+   "rmse": 30.365811393825282,
+   "mae": 20.859742453085904,
+   "mape": 1.4762920503350971,
+   "dm_t": 0.4655751075760474,
+   "dm_p": 0.6415196641300388
+  },
+  {
+   "key": "ridge_a",
+   "model": "Ridge",
+   "target": "A",
+   "features": "RAW",
+   "rmse": 30.33490100475071,
+   "mae": 20.862202785276224,
+   "mape": 1.4726762282403998,
+   "dm_t": 0.25153921086906306,
+   "dm_p": 0.8013972505590874
+  },
+  {
+   "key": "ridge_b_raw",
+   "model": "Ridge",
+   "target": "B",
+   "features": "RAW-returns",
+   "rmse": 30.306796647078375,
+   "mae": 20.813011139837073,
+   "mape": 1.470420405880891,
+   "dm_t": 0.020487063773164053,
+   "dm_p": 0.9836548315256312
+  },
+  {
+   "key": "ridge_b_eng",
+   "model": "Ridge",
+   "target": "B",
+   "features": "ENGINEERED",
+   "rmse": 30.28218157732469,
+   "mae": 20.785715391718735,
+   "mape": 1.4688189445668975,
+   "dm_t": -0.3479390714412228,
+   "dm_p": 0.7278859416141777
+  },
+  {
+   "key": "blr_b_eng",
+   "model": "Bayesian LR",
+   "target": "B",
+   "features": "ENGINEERED",
+   "rmse": 30.29152222499713,
+   "mae": 20.792136717161267,
+   "mape": 1.4698156349773603,
+   "dm_t": -0.1446168150814682,
+   "dm_p": 0.8850134202893642
+  },
+  {
+   "key": "blr_a",
+   "model": "Bayesian LR",
+   "target": "A",
+   "features": "RAW",
+   "rmse": 30.33267444102151,
+   "mae": 20.8600564732943,
+   "mape": 1.4725313720121105,
+   "dm_t": 0.23588363164992807,
+   "dm_p": 0.8135229699495009
+  }
+ ],
+ "clf": [
+  {
+   "key": "majority",
+   "model": "Majority class",
+   "kind": "baseline",
+   "accuracy": 0.5194647201946472,
+   "n_correct": 427,
+   "f1": 0.6837469975980784,
+   "auc": null,
+   "log_loss": 0.6924164607689236,
+   "p_vs_majority": 0.5141014925875779,
+   "share_up": 1.0,
+   "cv_auc": null
+  },
+  {
+   "key": "same_as_today",
+   "model": "Same as today",
+   "kind": "baseline",
+   "accuracy": 0.5085158150851582,
+   "n_correct": 418,
+   "f1": 0.5269320843091335,
+   "auc": 0.5077698396229212,
+   "log_loss": null,
+   "p_vs_majority": 0.7464692155267406,
+   "share_up": 0.5194647201946472,
+   "cv_auc": null
+  },
+  {
+   "key": "lda",
+   "model": "LDA",
+   "kind": "model",
+   "accuracy": 0.5218978102189781,
+   "n_correct": 429,
+   "f1": 0.6050251256281407,
+   "auc": 0.5061216019921145,
+   "log_loss": 0.6958026668014362,
+   "p_vs_majority": 0.45848245329677934,
+   "share_up": 0.6909975669099757,
+   "cv_auc": 0.5101043478761814
+  },
+  {
+   "key": "gnb",
+   "model": "Gaussian NB",
+   "kind": "model",
+   "accuracy": 0.5085158150851582,
+   "n_correct": 418,
+   "f1": 0.48860759493670886,
+   "auc": 0.510592001897252,
+   "log_loss": 0.7321389372111414,
+   "p_vs_majority": 0.7464692155267406,
+   "share_up": 0.4416058394160584,
+   "cv_auc": 0.5101036635629659
+  },
+  {
+   "key": "logistic",
+   "model": "Logistic regression",
+   "kind": "model",
+   "accuracy": 0.5194647201946472,
+   "n_correct": 427,
+   "f1": 0.6837469975980784,
+   "auc": 0.5024278896036523,
+   "log_loss": 0.6924192233445473,
+   "p_vs_majority": 0.5141014925875779,
+   "share_up": 1.0,
+   "cv_auc": null
+  },
+  {
+   "key": "bayes_logistic",
+   "model": "Bayesian logistic (Laplace)",
+   "kind": "model",
+   "accuracy": 0.5194647201946472,
+   "n_correct": 427,
+   "f1": 0.6837469975980784,
+   "auc": 0.5024516052530164,
+   "log_loss": 0.6924192594227793,
+   "p_vs_majority": 0.5141014925875779,
+   "share_up": 1.0,
+   "cv_auc": null
+  },
+  {
+   "key": "linear_svm",
+   "model": "Linear SVM",
+   "kind": "model",
+   "accuracy": 0.5194647201946472,
+   "n_correct": 427,
+   "f1": 0.5536723163841808,
+   "auc": 0.5023567426555599,
+   "log_loss": null,
+   "p_vs_majority": 0.5141014925875779,
+   "share_up": 0.5571776155717761,
+   "cv_auc": null
+  },
+  {
+   "key": "rbf_svm",
+   "model": "RBF SVM",
+   "kind": "model",
+   "accuracy": 0.5194647201946472,
+   "n_correct": 427,
+   "f1": 0.6837469975980784,
+   "auc": 0.5048528147511339,
+   "log_loss": null,
+   "p_vs_majority": 0.5141014925875779,
+   "share_up": 1.0,
+   "cv_auc": null
+  }
+ ],
+ "maj_rate": 0.5194647201946472,
+ "laplace": {
+  "alpha": 1000000.0,
+  "iters": 3,
+  "min_eig_H": 1100.1534404193633,
+  "max_eig_H": 1004456.1019748714
+ },
+ "tuned": {
+  "logistic_C": 1e-06,
+  "linear_svm_C": 0.0001,
+  "rbf_C": 0.1,
+  "rbf_gamma": 0.01,
+  "rbf_searched": true,
+  "n_sv": 4287,
+  "smo_iters": 2285
+ },
+ "kernel": {
+  "x": [
+   1.5,
+   -0.5
+  ],
+  "z": [
+   0.5,
+   2.0
+  ],
+  "lhs": 0.0625,
+  "rhs": 0.06249999999999978
+ },
+ "seconds": 28.27766990661621
+}
